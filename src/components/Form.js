@@ -1,4 +1,4 @@
-import { useState } from "react";
+// import { useState } from "react";
 
 export default function Form({ onAddActivity }) {
   function handleSubmit(event) {
@@ -10,8 +10,8 @@ export default function Form({ onAddActivity }) {
     const name = formElements.name.value;
     const isForGoodWeather = formElements.checkbox.checked;
 
-    // const newActivity = [{}]
-    onAddActivity(newActivity);
+    // const newActivity = {}
+    onAddActivity(name, isForGoodWeather);
 
     // setActivity(formElements.name.value);
     // setGoodWeather(formElements.checkbox.checked);

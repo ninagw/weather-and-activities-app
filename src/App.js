@@ -10,12 +10,11 @@ function App() {
   function handleAddActivity(newActivity) {
     setActivity([
       ...activity,
-      { id: uid(), activity: { activity }, checkbox: {} },
+      { id: uid(), activity: newActivity.name, checkbox: {} },
     ]);
   }
 
-  return;
-  <Form onAddActivity={handleAddActivity} />;
+  return <Form onAddActivity={handleAddActivity} />;
 }
 
 export default App;
