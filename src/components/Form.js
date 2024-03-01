@@ -8,10 +8,10 @@ export default function Form({ onAddActivity }) {
 
     const formElements = event.target.elements;
     const name = formElements.name.value;
-    const isForGoodWeather = formElements.checkbox.checked;
+    // const isForGoodWeather = formElements.checkbox.checked;
 
     // const newActivity = {}
-    onAddActivity(name, isForGoodWeather);
+    onAddActivity(name);
 
     // setActivity(formElements.name.value);
     // setGoodWeather(formElements.checkbox.checked);
