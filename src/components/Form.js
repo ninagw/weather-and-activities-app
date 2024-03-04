@@ -8,10 +8,10 @@ export default function Form({ onAddActivity }) {
 
     const formElements = event.target.elements;
     const name = formElements.name.value;
-    // const isForGoodWeather = formElements.checkbox.checked;
+    const isForGoodWeather = formElements.checkbox.checked;
 
     // const newActivity = {}
-    onAddActivity(name);
+    onAddActivity(name, isForGoodWeather);
 
     // setActivity(formElements.name.value);
     // setGoodWeather(formElements.checkbox.checked);
@@ -23,14 +23,12 @@ export default function Form({ onAddActivity }) {
   return (
     <>
       <h1>Add new Activity:</h1>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label htmlFor="name">Name</label>
         <input type="text" id="name" name="name" />
         <label htmlFor="checkbox">Good-weather activity:</label>
         <input type="checkbox" id="checkbox" name="checkbox" />
-        <button type="submit" onSubmit={handleSubmit}>
-          Submit
-        </button>
+        <button type="submit">Submit</button>
       </form>
     </>
   );
