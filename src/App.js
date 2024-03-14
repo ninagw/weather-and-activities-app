@@ -22,7 +22,13 @@ function App() {
 
       setIsWeather(isWeather);
     }
-    startFetching();
+    const interval = setInterval(() => {
+      startFetching();
+    }, 5000);
+
+    return () => {
+      clearInterval(interval);
+    };
   }, []);
 
   if (!isWeather) {
