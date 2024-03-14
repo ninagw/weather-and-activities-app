@@ -1,4 +1,3 @@
-// import logo from "./logo.svg";
 import "./App.css";
 import Form from "./components/Form.js";
 import { useEffect, useState } from "react";
@@ -20,7 +19,7 @@ function App() {
         "https://example-apis.vercel.app/api/weather"
       );
       const isWeather = await response.json();
-      // console.log(isWeather);
+
       setIsWeather(isWeather);
     }
     startFetching();
@@ -41,14 +40,22 @@ function App() {
     ]);
   }
 
+  function handleDeleteActivity(id) {
+    setActivity(activity.filter((singleActivity) => id !== singleActivity.id));
+  }
+
   return (
     <>
       <h1>Weather and Activity App</h1>
-      <Form onAddActivity={handleAddActivity} />
       <h2>
         {isWeather.condition} {isWeather.temperature} °C
       </h2>
-      <List activity={filteredActivities} isWeather={isWeather} />
+      <List
+        activity={filteredActivities}
+        isWeather={isWeather}
+        onDeleteActivity={handleDeleteActivity}
+      />
+      <Form onAddActivity={handleAddActivity} />
     </>
   );
 }
